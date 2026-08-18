@@ -1,0 +1,17 @@
+[
+  {"word": "sedentary", "part_of_speech": "adjective"},
+  {"word": "malnutrition", "part_of_speech": "noun"},
+  {"word": "obesity", "part_of_speech": "noun"},
+  {"word": "chronic", "part_of_speech": "adjective"},
+  {"word": "well-being", "part_of_speech": "noun"},
+  {"word": "prescription", "part_of_speech": "noun"},
+  {"word": "epidemic", "part_of_speech": "noun"},
+  {"word": "immunity", "part_of_speech": "noun"},
+  {"word": "detrimental", "part_of_speech": "adjective"},
+  {"word": "life expectancy", "part_of_speech": "noun phrase"},
+  {"word": "sanitation", "part_of_speech": "noun"},
+  {"word": "ailment", "part_of_speech": "noun"},
+  {"word": "holistic", "part_of_speech": "adjective"},
+  {"word": "moderate", "part_of_speech": "adjective"},
+  {"word": "alleviate", "part_of_speech": "verb"}
+]

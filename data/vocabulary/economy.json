@@ -1,0 +1,17 @@
+[
+  {"word": "substantial", "part_of_speech": "adjective"},
+  {"word": "inflation", "part_of_speech": "noun"},
+  {"word": "recession", "part_of_speech": "noun"},
+  {"word": "subsidy", "part_of_speech": "noun"},
+  {"word": "revenue", "part_of_speech": "noun"},
+  {"word": "disposable income", "part_of_speech": "noun phrase"},
+  {"word": "commodity", "part_of_speech": "noun"},
+  {"word": "fluctuate", "part_of_speech": "verb"},
+  {"word": "unemployment rate", "part_of_speech": "noun phrase"},
+  {"word": "consumerism", "part_of_speech": "noun"},
+  {"word": "monopoly", "part_of_speech": "noun"},
+  {"word": "outsource", "part_of_speech": "verb"},
+  {"word": "tariff", "part_of_speech": "noun"},
+  {"word": "stimulate", "part_of_speech": "verb"},
+  {"word": "viable", "part_of_speech": "adjective"}
+]

@@ -1,0 +1,17 @@
+[
+  {"word": "innovation", "part_of_speech": "noun"},
+  {"word": "obsolete", "part_of_speech": "adjective"},
+  {"word": "automation", "part_of_speech": "noun"},
+  {"word": "artificial intelligence", "part_of_speech": "noun phrase"},
+  {"word": "streamline", "part_of_speech": "verb"},
+  {"word": "connectivity", "part_of_speech": "noun"},
+  {"word": "cybersecurity", "part_of_speech": "noun"},
+  {"word": "algorithm", "part_of_speech": "noun"},
+  {"word": "digitize", "part_of_speech": "verb"},
+  {"word": "breakthrough", "part_of_speech": "noun"},
+  {"word": "surveillance", "part_of_speech": "noun"},
+  {"word": "unprecedented", "part_of_speech": "adjective"},
+  {"word": "revolutionize", "part_of_speech": "verb"},
+  {"word": "dependency", "part_of_speech": "noun"},
+  {"word": "infrastructure", "part_of_speech": "noun"}
+]

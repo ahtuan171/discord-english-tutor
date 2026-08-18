@@ -1,0 +1,17 @@
+[
+  {"word": "workforce", "part_of_speech": "noun"},
+  {"word": "productivity", "part_of_speech": "noun"},
+  {"word": "redundancy", "part_of_speech": "noun"},
+  {"word": "flexitime", "part_of_speech": "noun"},
+  {"word": "burnout", "part_of_speech": "noun"},
+  {"word": "qualification", "part_of_speech": "noun"},
+  {"word": "entrepreneur", "part_of_speech": "noun"},
+  {"word": "work-life balance", "part_of_speech": "noun phrase"},
+  {"word": "promotion", "part_of_speech": "noun"},
+  {"word": "delegate", "part_of_speech": "verb"},
+  {"word": "collaborate", "part_of_speech": "verb"},
+  {"word": "remuneration", "part_of_speech": "noun"},
+  {"word": "freelance", "part_of_speech": "adjective"},
+  {"word": "competence", "part_of_speech": "noun"},
+  {"word": "job security", "part_of_speech": "noun phrase"}
+]
