@@ -1,0 +1,92 @@
+[
+  {
+    "word": "substantial",
+    "part_of_speech": "adjective",
+    "definition": "large in amount or degree",
+    "example": "There has been a substantial increase in online shopping in recent years."
+  },
+  {
+    "word": "inflation",
+    "part_of_speech": "noun",
+    "definition": "a general rise in prices across an economy over time",
+    "example": "High inflation has made everyday goods more expensive for families."
+  },
+  {
+    "word": "recession",
+    "part_of_speech": "noun",
+    "definition": "a period when a country's economy performs badly and businesses suffer",
+    "example": "Many companies had to lay off staff during the recession."
+  },
+  {
+    "word": "subsidy",
+    "part_of_speech": "noun",
+    "definition": "money given by the government to support an industry or activity",
+    "example": "The government offers subsidies to farmers to keep food prices low."
+  },
+  {
+    "word": "revenue",
+    "part_of_speech": "noun",
+    "definition": "the income a government or company receives",
+    "example": "The company's revenue grew by 20% last year."
+  },
+  {
+    "word": "disposable income",
+    "part_of_speech": "noun phrase",
+    "definition": "the money a person has left to spend or save after paying taxes",
+    "example": "Rising prices have reduced the disposable income of many households."
+  },
+  {
+    "word": "commodity",
+    "part_of_speech": "noun",
+    "definition": "a raw material or basic product that can be bought and sold, such as oil or coffee",
+    "example": "The price of commodities like oil affects the entire global economy."
+  },
+  {
+    "word": "fluctuate",
+    "part_of_speech": "verb",
+    "definition": "to rise and fall irregularly in number or amount",
+    "example": "Currency exchange rates fluctuate constantly depending on market conditions."
+  },
+  {
+    "word": "unemployment rate",
+    "part_of_speech": "noun phrase",
+    "definition": "the percentage of people who are able to work but do not have a job",
+    "example": "The unemployment rate rose sharply during the economic downturn."
+  },
+  {
+    "word": "consumerism",
+    "part_of_speech": "noun",
+    "definition": "the tendency of people to buy and consume goods in ever greater amounts",
+    "example": "Critics argue that consumerism encourages people to buy things they don't need."
+  },
+  {
+    "word": "monopoly",
+    "part_of_speech": "noun",
+    "definition": "complete control of an entire industry by one company",
+    "example": "The company was accused of holding a monopoly over the local market."
+  },
+  {
+    "word": "outsource",
+    "part_of_speech": "verb",
+    "definition": "to pay another company to provide a service rather than doing it yourself",
+    "example": "Many businesses outsource their customer service to reduce costs."
+  },
+  {
+    "word": "tariff",
+    "part_of_speech": "noun",
+    "definition": "a tax charged on goods imported from or exported to another country",
+    "example": "The government raised tariffs on imported steel to protect local producers."
+  },
+  {
+    "word": "stimulate",
+    "part_of_speech": "verb",
+    "definition": "to encourage economic activity or growth",
+    "example": "The government cut interest rates to stimulate economic growth."
+  },
+  {
+    "word": "viable",
+    "part_of_speech": "adjective",
+    "definition": "capable of working successfully; practical and feasible",
+    "example": "Solar power is becoming a viable alternative to fossil fuels."
+  }
+]

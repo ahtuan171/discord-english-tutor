@@ -17,8 +17,8 @@ class Progress(commands.Cog):
 
         async with get_session() as session:
             user = await get_or_create_user(session, interaction.user.id, interaction.user.display_name)
-            report = await build_weekly_report(session, user.id)
             streak = user.streak_count
+            report = await build_weekly_report(session, user.id, streak)
             await session.commit()
 
         await interaction.followup.send(

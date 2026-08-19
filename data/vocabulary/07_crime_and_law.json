@@ -1,0 +1,92 @@
+[
+  {
+    "word": "deter",
+    "part_of_speech": "verb",
+    "definition": "to discourage someone from doing something, especially by making it seem risky or unpleasant",
+    "example": "Harsher penalties are meant to deter people from committing crimes."
+  },
+  {
+    "word": "offender",
+    "part_of_speech": "noun",
+    "definition": "a person who has committed a crime",
+    "example": "First-time offenders are often given lighter sentences."
+  },
+  {
+    "word": "legislation",
+    "part_of_speech": "noun",
+    "definition": "a law or set of laws passed by a government",
+    "example": "The government introduced new legislation to tackle cybercrime."
+  },
+  {
+    "word": "rehabilitation",
+    "part_of_speech": "noun",
+    "definition": "the process of helping someone return to a normal, useful life, e.g. after prison",
+    "example": "Many experts believe rehabilitation is more effective than punishment alone."
+  },
+  {
+    "word": "incarceration",
+    "part_of_speech": "noun",
+    "definition": "the state of being kept in prison",
+    "example": "The country has one of the highest incarceration rates in the world."
+  },
+  {
+    "word": "juvenile",
+    "part_of_speech": "adjective",
+    "definition": "relating to young people who are not yet adults",
+    "example": "Juvenile crime has become a growing concern for local communities."
+  },
+  {
+    "word": "enforcement",
+    "part_of_speech": "noun",
+    "definition": "the act of making sure a law or rule is obeyed",
+    "example": "Stricter enforcement of traffic laws has reduced road accidents."
+  },
+  {
+    "word": "custody",
+    "part_of_speech": "noun",
+    "definition": "the state of being held by the police, or legal responsibility for someone",
+    "example": "The suspect was taken into custody shortly after the incident."
+  },
+  {
+    "word": "violation",
+    "part_of_speech": "noun",
+    "definition": "an action that breaks a law, rule, or agreement",
+    "example": "The factory was fined for violations of environmental regulations."
+  },
+  {
+    "word": "capital punishment",
+    "part_of_speech": "noun phrase",
+    "definition": "the legal punishment of death for a serious crime",
+    "example": "Many countries have abolished capital punishment in favor of life imprisonment."
+  },
+  {
+    "word": "leniency",
+    "part_of_speech": "noun",
+    "definition": "the quality of being less strict or severe when punishing someone",
+    "example": "The judge showed leniency because it was the defendant's first offense."
+  },
+  {
+    "word": "misconduct",
+    "part_of_speech": "noun",
+    "definition": "unacceptable or improper behavior, especially at work or in public office",
+    "example": "The officer was suspended after an investigation into misconduct."
+  },
+  {
+    "word": "prosecute",
+    "part_of_speech": "verb",
+    "definition": "to take legal action against someone for a crime",
+    "example": "The company was prosecuted for fraud after the investigation."
+  },
+  {
+    "word": "deterrent",
+    "part_of_speech": "noun",
+    "definition": "something that discourages people from doing a particular action",
+    "example": "Some people believe the death penalty acts as a deterrent to serious crime."
+  },
+  {
+    "word": "compliance",
+    "part_of_speech": "noun",
+    "definition": "the act of obeying a rule, law, or request",
+    "example": "The company was fined for failing to ensure compliance with safety regulations."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "word": "innovation",
+    "part_of_speech": "noun",
+    "definition": "a new idea, method, or invention",
+    "example": "Technological innovation has transformed the way people communicate."
+  },
+  {
+    "word": "obsolete",
+    "part_of_speech": "adjective",
+    "definition": "no longer used because something newer has replaced it",
+    "example": "Many jobs have become obsolete due to automation."
+  },
+  {
+    "word": "automation",
+    "part_of_speech": "noun",
+    "definition": "the use of machines or computers to do work that people used to do",
+    "example": "Automation has increased factory output while reducing the need for manual labor."
+  },
+  {
+    "word": "artificial intelligence",
+    "part_of_speech": "noun phrase",
+    "definition": "the ability of computers or machines to perform tasks that normally require human intelligence",
+    "example": "Artificial intelligence is increasingly used to diagnose diseases faster than doctors."
+  },
+  {
+    "word": "streamline",
+    "part_of_speech": "verb",
+    "definition": "to make a process simpler and more efficient",
+    "example": "The new software helped streamline the company's ordering process."
+  },
+  {
+    "word": "connectivity",
+    "part_of_speech": "noun",
+    "definition": "the state of being connected, especially to the internet or a network",
+    "example": "Better internet connectivity in rural areas has opened up new job opportunities."
+  },
+  {
+    "word": "cybersecurity",
+    "part_of_speech": "noun",
+    "definition": "the practice of protecting computer systems and networks from digital attacks",
+    "example": "Companies are investing heavily in cybersecurity to protect customer data."
+  },
+  {
+    "word": "algorithm",
+    "part_of_speech": "noun",
+    "definition": "a set of rules or steps followed by a computer to solve a problem",
+    "example": "Social media platforms use algorithms to decide what content users see."
+  },
+  {
+    "word": "digitize",
+    "part_of_speech": "verb",
+    "definition": "to convert information into digital form so it can be used by a computer",
+    "example": "The library has digitized thousands of old manuscripts to preserve them."
+  },
+  {
+    "word": "breakthrough",
+    "part_of_speech": "noun",
+    "definition": "an important development or achievement, especially in technology or science",
+    "example": "Scientists made a major breakthrough in battery technology last year."
+  },
+  {
+    "word": "surveillance",
+    "part_of_speech": "noun",
+    "definition": "the close monitoring of a person, group, or place, often using cameras or technology",
+    "example": "The use of surveillance cameras in public spaces raises privacy concerns."
+  },
+  {
+    "word": "unprecedented",
+    "part_of_speech": "adjective",
+    "definition": "never having happened or existed before",
+    "example": "The pandemic caused an unprecedented rise in remote working."
+  },
+  {
+    "word": "revolutionize",
+    "part_of_speech": "verb",
+    "definition": "to change something completely and dramatically",
+    "example": "Smartphones have revolutionized the way people access information."
+  },
+  {
+    "word": "dependency",
+    "part_of_speech": "noun",
+    "definition": "the state of relying on something or someone",
+    "example": "Experts are concerned about growing dependency on smartphones among teenagers."
+  },
+  {
+    "word": "infrastructure",
+    "part_of_speech": "noun",
+    "definition": "the basic physical systems of a country or organization, such as roads, power, and networks",
+    "example": "The government is investing billions in digital infrastructure."
+  }
+]

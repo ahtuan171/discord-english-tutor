@@ -1,0 +1,92 @@
+[
+  {
+    "word": "sedentary",
+    "part_of_speech": "adjective",
+    "definition": "involving little or no physical activity",
+    "example": "A sedentary lifestyle increases the risk of heart disease."
+  },
+  {
+    "word": "malnutrition",
+    "part_of_speech": "noun",
+    "definition": "a condition caused by not eating enough or the right kind of food",
+    "example": "Malnutrition remains a serious problem in many developing regions."
+  },
+  {
+    "word": "obesity",
+    "part_of_speech": "noun",
+    "definition": "the condition of being extremely overweight",
+    "example": "Childhood obesity has risen sharply due to poor diet and lack of exercise."
+  },
+  {
+    "word": "chronic",
+    "part_of_speech": "adjective",
+    "definition": "describing an illness that lasts for a long time or keeps recurring",
+    "example": "Chronic diseases like diabetes require long-term management."
+  },
+  {
+    "word": "well-being",
+    "part_of_speech": "noun",
+    "definition": "the state of being healthy, happy, and comfortable",
+    "example": "Regular exercise contributes greatly to mental well-being."
+  },
+  {
+    "word": "prescription",
+    "part_of_speech": "noun",
+    "definition": "a written instruction from a doctor for a specific medicine or treatment",
+    "example": "The doctor gave her a prescription for antibiotics."
+  },
+  {
+    "word": "epidemic",
+    "part_of_speech": "noun",
+    "definition": "an outbreak of a disease that spreads quickly among many people in an area",
+    "example": "The city struggled to contain the flu epidemic last winter."
+  },
+  {
+    "word": "immunity",
+    "part_of_speech": "noun",
+    "definition": "the body's ability to resist a particular infection or disease",
+    "example": "Vaccination helps the body build immunity against the virus."
+  },
+  {
+    "word": "deficiency",
+    "part_of_speech": "noun",
+    "definition": "a lack of something, especially a vitamin or mineral necessary for health",
+    "example": "A vitamin D deficiency can weaken bones over time."
+  },
+  {
+    "word": "life expectancy",
+    "part_of_speech": "noun phrase",
+    "definition": "the average number of years a person is expected to live",
+    "example": "Improved healthcare has significantly increased life expectancy in many countries."
+  },
+  {
+    "word": "sanitation",
+    "part_of_speech": "noun",
+    "definition": "systems for keeping places clean, especially by removing waste and sewage",
+    "example": "Poor sanitation is a leading cause of disease in some rural areas."
+  },
+  {
+    "word": "ailment",
+    "part_of_speech": "noun",
+    "definition": "a minor illness or health problem",
+    "example": "Common ailments such as colds are usually treated at home."
+  },
+  {
+    "word": "holistic",
+    "part_of_speech": "adjective",
+    "definition": "treating the whole person, including mental and social factors, not just physical symptoms",
+    "example": "The clinic takes a holistic approach that combines diet, exercise, and mental health support."
+  },
+  {
+    "word": "moderate",
+    "part_of_speech": "adjective",
+    "definition": "average in amount, not extreme",
+    "example": "Doctors recommend moderate exercise for at least 30 minutes a day."
+  },
+  {
+    "word": "alleviate",
+    "part_of_speech": "verb",
+    "definition": "to make a problem or pain less severe",
+    "example": "Regular stretching can help alleviate back pain."
+  }
+]

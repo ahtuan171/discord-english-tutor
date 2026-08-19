@@ -1,73 +1,49 @@
+import logging
+
 from sqlalchemy import select
 
 from bot import config
-from bot.db.models import Vocabulary
-from bot.llm.factory import get_llm_client
-from bot.llm.prompts import DAILY_VOCAB_PROMPT, DEFINE_WORDS_PROMPT
+from bot.db.models import DictionaryEntry, Vocabulary
 from bot.services.word_bank import load_word_bank
-from bot.utils.json_extract import extract_json
+
+log = logging.getLogger("vocabulary_service")
 
 
 async def _next_words_from_bank(session, count: int) -> list[dict]:
     """Walk the curated word bank in file order and return the first `count`
     words that haven't been taught yet (i.e. not already in the Vocabulary
-    table). Returns fewer than `count` if the bank is running low."""
+    table). Returns fewer than `count` (possibly zero) once the whole bank
+    has been taught — spaced-repetition review of already-taught words is
+    handled separately by /review and /quick, not by re-sending new-word
+    batches here."""
     bank = load_word_bank()
     if not bank:
         return []
 
     taught_words = set((await session.execute(select(Vocabulary.word))).scalars().all())
-
-    picked = []
-    for entry in bank:
-        if entry["word"] in taught_words:
-            continue
-        picked.append(entry)
-        if len(picked) >= count:
-            break
-    return picked
+    picked = [entry for entry in bank if entry["word"] not in taught_words]
+    return picked[:count]
 
 
-async def _define_words(bank_entries: list[dict]) -> list[dict]:
-    words = ", ".join(e["word"] for e in bank_entries)
-    prompt = DEFINE_WORDS_PROMPT.format(words=words)
-    raw = await get_llm_client().generate(prompt, temperature=0.4)
-    defined = extract_json(raw)
-
-    by_word = {d["word"].strip().lower(): d for d in defined}
-    results = []
-    for entry in bank_entries:
-        d = by_word.get(entry["word"])
-        results.append(
-            {
-                "word": entry["word"],
-                "part_of_speech": entry.get("part_of_speech") or (d or {}).get("part_of_speech", ""),
-                "definition": (d or {}).get("definition", ""),
-                "example": (d or {}).get("example", ""),
-            }
-        )
-    return results
+async def _lookup_dictionary_entries(session, words: list[str]) -> dict[str, DictionaryEntry]:
+    if not words:
+        return {}
+    rows = (
+        await session.execute(select(DictionaryEntry).where(DictionaryEntry.word.in_(words)))
+    ).scalars().all()
+    return {row.word: row for row in rows}
 
 
 async def generate_daily_words(session, count: int = config.DAILY_WORD_COUNT) -> list[Vocabulary]:
     bank_entries = await _next_words_from_bank(session, count)
 
-    items: list[dict] = []
-    if bank_entries:
-        items.extend(await _define_words(bank_entries))
-
-    remaining = count - len(items)
-    if remaining > 0:
-        # Word bank exhausted (or missing) — fall back to letting the LLM invent words.
-        existing = (await session.execute(select(Vocabulary.word))).scalars().all()
-        exclude_words = ", ".join(existing[-200:]) or "none"
-        prompt = DAILY_VOCAB_PROMPT.format(count=remaining, exclude_words=exclude_words)
-        raw = await get_llm_client().generate(prompt, temperature=0.8)
-        items.extend(extract_json(raw))
+    words_needing_lookup = [e["word"] for e in bank_entries if not e.get("definition")]
+    dictionary_by_word = await _lookup_dictionary_entries(session, words_needing_lookup)
 
     vocab_objs: list[Vocabulary] = []
-    for item in items:
-        word = item["word"].strip().lower()
+    for entry in bank_entries:
+        word = entry["word"]
+
         existing_vocab = (
             await session.execute(select(Vocabulary).where(Vocabulary.word == word))
         ).scalar_one_or_none()
@@ -75,11 +51,29 @@ async def generate_daily_words(session, count: int = config.DAILY_WORD_COUNT) ->
             vocab_objs.append(existing_vocab)
             continue
 
+        if entry.get("definition"):
+            part_of_speech, definition, example = (
+                entry.get("part_of_speech", ""),
+                entry["definition"],
+                entry.get("example", ""),
+            )
+        else:
+            dict_entry = dictionary_by_word.get(word)
+            if not dict_entry:
+                log.warning(
+                    "No dictionary entry found for %r — run `python -m scripts.seed_dictionary` "
+                    "or add a manual definition/example in data/vocabulary/. Skipping.",
+                    word,
+                )
+                continue
+            part_of_speech = entry.get("part_of_speech") or dict_entry.part_of_speech
+            definition, example = dict_entry.definition, dict_entry.example
+
         vocab = Vocabulary(
             word=word,
-            part_of_speech=item.get("part_of_speech", ""),
-            definition=item["definition"],
-            example=item["example"],
+            part_of_speech=part_of_speech,
+            definition=definition,
+            example=example,
         )
         session.add(vocab)
         vocab_objs.append(vocab)

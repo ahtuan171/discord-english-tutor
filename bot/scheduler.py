@@ -7,7 +7,7 @@ from discord.ext import commands
 from bot import config
 from bot.db.session import get_session
 from bot.services.lesson_service import get_lesson_vocabulary, get_or_create_today_lesson
-from bot.utils.embeds import vocabulary_embed, writing_embed
+from bot.utils.embeds import vocabulary_embed
 
 log = logging.getLogger("scheduler")
 
@@ -32,11 +32,12 @@ def setup_scheduler(bot: commands.Bot) -> AsyncIOScheduler:
             vocab_list = await get_lesson_vocabulary(session, lesson)
             await session.commit()
 
+        if not vocab_list:
+            log.info("Word bank fully taught — skipping scheduled post, nothing new to send.")
+            return
+
         await channel.send(embed=vocabulary_embed(vocab_list))
-        await channel.send(embed=writing_embed(lesson))
-        await channel.send(
-            "Run `/paraphrase`, `/quiz`, or `/quick` to practice today's lesson. Good luck! 🍀"
-        )
+        await channel.send("Run `/review` or `/quick` to practice today's words. Good luck! 🍀")
 
     scheduler.add_job(
         post_daily_lesson,

@@ -12,11 +12,9 @@ logging.basicConfig(level=logging.INFO)
 log = logging.getLogger("english-tutor-bot")
 
 COGS = [
-    "bot.cogs.daily",
-    "bot.cogs.practice",
-    "bot.cogs.writing",
-    "bot.cogs.quiz",
+    "bot.cogs.vocab",
     "bot.cogs.review",
+    "bot.cogs.quick",
     "bot.cogs.progress",
 ]
 

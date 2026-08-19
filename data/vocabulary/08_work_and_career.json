@@ -1,0 +1,92 @@
+[
+  {
+    "word": "workforce",
+    "part_of_speech": "noun",
+    "definition": "all the people who work for a company, industry, or country",
+    "example": "Automation is expected to change a large part of the workforce in the next decade."
+  },
+  {
+    "word": "productivity",
+    "part_of_speech": "noun",
+    "definition": "the rate at which a person or company produces work or output",
+    "example": "Remote work has been shown to increase productivity for many employees."
+  },
+  {
+    "word": "redundancy",
+    "part_of_speech": "noun",
+    "definition": "the situation of losing a job because it is no longer needed",
+    "example": "The company announced hundreds of redundancies after the factory closed."
+  },
+  {
+    "word": "flexitime",
+    "part_of_speech": "noun",
+    "definition": "a system that lets employees choose their own working hours within agreed limits",
+    "example": "Flexitime allows parents to adjust their schedule around school hours."
+  },
+  {
+    "word": "burnout",
+    "part_of_speech": "noun",
+    "definition": "a state of physical or mental exhaustion caused by long-term stress, especially from work",
+    "example": "Long working hours without breaks can eventually lead to burnout."
+  },
+  {
+    "word": "qualification",
+    "part_of_speech": "noun",
+    "definition": "a skill or certificate that shows someone is suitable for a job or course of study",
+    "example": "A university degree is often a basic qualification for this type of job."
+  },
+  {
+    "word": "entrepreneur",
+    "part_of_speech": "noun",
+    "definition": "a person who starts and runs their own business, taking on financial risk",
+    "example": "Young entrepreneurs are increasingly starting businesses straight out of university."
+  },
+  {
+    "word": "work-life balance",
+    "part_of_speech": "noun phrase",
+    "definition": "a healthy balance between the time spent working and the time spent on personal life",
+    "example": "Remote work has helped many employees achieve a better work-life balance."
+  },
+  {
+    "word": "promotion",
+    "part_of_speech": "noun",
+    "definition": "the act of raising someone to a higher rank or position at work",
+    "example": "She received a promotion after five years at the company."
+  },
+  {
+    "word": "delegate",
+    "part_of_speech": "verb",
+    "definition": "to give a task or responsibility to another person, often someone more junior",
+    "example": "Good managers know how to delegate tasks effectively."
+  },
+  {
+    "word": "collaborate",
+    "part_of_speech": "verb",
+    "definition": "to work together with others on a task or project",
+    "example": "Employees from different departments collaborated on the new project."
+  },
+  {
+    "word": "remuneration",
+    "part_of_speech": "noun",
+    "definition": "payment or reward for work or services",
+    "example": "The job offers good remuneration, including bonuses and health benefits."
+  },
+  {
+    "word": "freelance",
+    "part_of_speech": "adjective",
+    "definition": "working for yourself and taking on jobs for different clients, rather than being employed by one company",
+    "example": "More people are choosing freelance work for greater flexibility."
+  },
+  {
+    "word": "competence",
+    "part_of_speech": "noun",
+    "definition": "the ability to do something well or successfully",
+    "example": "The training program is designed to build employees' technical competence."
+  },
+  {
+    "word": "job security",
+    "part_of_speech": "noun phrase",
+    "definition": "the likelihood that a person will keep their job without the risk of becoming unemployed",
+    "example": "Many workers value job security more than a higher salary."
+  }
+]

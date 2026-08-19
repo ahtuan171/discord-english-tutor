@@ -1,0 +1,92 @@
+[
+  {
+    "word": "mitigate",
+    "part_of_speech": "verb",
+    "definition": "to make something less severe or serious",
+    "example": "Planting more trees can help mitigate the effects of climate change."
+  },
+  {
+    "word": "sustainable",
+    "part_of_speech": "adjective",
+    "definition": "able to continue over a long period without damaging the environment",
+    "example": "The government is investing in sustainable energy sources like wind and solar power."
+  },
+  {
+    "word": "deforestation",
+    "part_of_speech": "noun",
+    "definition": "the cutting down and clearing of forests",
+    "example": "Deforestation in the Amazon has accelerated in recent years."
+  },
+  {
+    "word": "emission",
+    "part_of_speech": "noun",
+    "definition": "a substance, especially a gas, released into the air, e.g. from cars or factories",
+    "example": "Many countries have set targets to reduce carbon emissions by 2030."
+  },
+  {
+    "word": "renewable",
+    "part_of_speech": "adjective",
+    "definition": "describing a source of energy that is not depleted when used, like solar or wind power",
+    "example": "Renewable energy will play a key role in fighting climate change."
+  },
+  {
+    "word": "biodiversity",
+    "part_of_speech": "noun",
+    "definition": "the variety of plant and animal life in a particular habitat",
+    "example": "Cutting down rainforests threatens the world's biodiversity."
+  },
+  {
+    "word": "ecosystem",
+    "part_of_speech": "noun",
+    "definition": "a community of living things together with their environment",
+    "example": "Coral reefs are one of the most diverse ecosystems on Earth."
+  },
+  {
+    "word": "pollutant",
+    "part_of_speech": "noun",
+    "definition": "a substance that contaminates the air, water, or soil",
+    "example": "Factories release harmful pollutants into nearby rivers."
+  },
+  {
+    "word": "conservation",
+    "part_of_speech": "noun",
+    "definition": "the protection and careful management of the environment and natural resources",
+    "example": "Wildlife conservation programs have helped save several endangered species."
+  },
+  {
+    "word": "depletion",
+    "part_of_speech": "noun",
+    "definition": "the reduction in the amount of something, especially a natural resource",
+    "example": "The depletion of the ozone layer was a major environmental concern in the 1990s."
+  },
+  {
+    "word": "greenhouse gas",
+    "part_of_speech": "noun phrase",
+    "definition": "a gas, such as carbon dioxide, that traps heat in the atmosphere and contributes to global warming",
+    "example": "Cars and factories release large amounts of greenhouse gas into the atmosphere."
+  },
+  {
+    "word": "degradation",
+    "part_of_speech": "noun",
+    "definition": "the process by which the environment is damaged or its quality reduced",
+    "example": "Overfishing has led to the degradation of marine ecosystems."
+  },
+  {
+    "word": "carbon footprint",
+    "part_of_speech": "noun phrase",
+    "definition": "the total amount of greenhouse gases produced by a person's or organization's activities",
+    "example": "Cycling to work instead of driving can significantly reduce your carbon footprint."
+  },
+  {
+    "word": "eco-friendly",
+    "part_of_speech": "adjective",
+    "definition": "not harmful to the environment",
+    "example": "More consumers are choosing eco-friendly products over plastic ones."
+  },
+  {
+    "word": "detrimental",
+    "part_of_speech": "adjective",
+    "definition": "causing harm or damage",
+    "example": "Excessive use of pesticides can be detrimental to soil quality."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "word": "diversity",
+    "part_of_speech": "noun",
+    "definition": "the state of including people from many different backgrounds, e.g. different races or cultures",
+    "example": "The city is known for its cultural diversity."
+  },
+  {
+    "word": "assimilate",
+    "part_of_speech": "verb",
+    "definition": "to become part of a different culture or group, adopting its customs",
+    "example": "Immigrants often take years to fully assimilate into a new culture."
+  },
+  {
+    "word": "heritage",
+    "part_of_speech": "noun",
+    "definition": "traditions, customs, or achievements passed down from earlier generations",
+    "example": "The festival celebrates the region's cultural heritage."
+  },
+  {
+    "word": "stereotype",
+    "part_of_speech": "noun",
+    "definition": "a fixed, oversimplified idea about a particular type of person or group",
+    "example": "The movie was criticized for reinforcing gender stereotypes."
+  },
+  {
+    "word": "norm",
+    "part_of_speech": "noun",
+    "definition": "a standard or pattern of behavior considered typical or acceptable in society",
+    "example": "Working from home has become the norm for many employees."
+  },
+  {
+    "word": "cohesion",
+    "part_of_speech": "noun",
+    "definition": "the quality of a group being united and working well together",
+    "example": "Community events help strengthen social cohesion in a neighborhood."
+  },
+  {
+    "word": "generational gap",
+    "part_of_speech": "noun phrase",
+    "definition": "a difference in values, attitudes, or behavior between younger and older people",
+    "example": "The generational gap often causes misunderstandings about technology use at home."
+  },
+  {
+    "word": "urbanization",
+    "part_of_speech": "noun",
+    "definition": "the process by which more people move to and live in cities",
+    "example": "Rapid urbanization has put pressure on housing and transport in big cities."
+  },
+  {
+    "word": "demographic",
+    "part_of_speech": "adjective",
+    "definition": "relating to the structure of a population, such as age or income",
+    "example": "The country is facing a demographic shift toward an older population."
+  },
+  {
+    "word": "inequality",
+    "part_of_speech": "noun",
+    "definition": "unfair differences between people, e.g. in wealth or opportunity",
+    "example": "Income inequality has widened significantly in the past two decades."
+  },
+  {
+    "word": "multicultural",
+    "part_of_speech": "adjective",
+    "definition": "including or relating to several different cultures",
+    "example": "Big cities are often multicultural, with residents from many countries."
+  },
+  {
+    "word": "tradition",
+    "part_of_speech": "noun",
+    "definition": "a custom or belief passed down through generations",
+    "example": "Many young people still follow traditions from their grandparents' time."
+  },
+  {
+    "word": "isolation",
+    "part_of_speech": "noun",
+    "definition": "the state of being separate or apart from other people",
+    "example": "Social isolation among the elderly has become a growing concern."
+  },
+  {
+    "word": "community",
+    "part_of_speech": "noun",
+    "definition": "a group of people living in the same area or sharing common interests",
+    "example": "The local community came together to clean up the park."
+  },
+  {
+    "word": "prevalent",
+    "part_of_speech": "adjective",
+    "definition": "widespread or common at a particular time or in a particular place",
+    "example": "Mental health issues are becoming more prevalent among young adults."
+  }
+]

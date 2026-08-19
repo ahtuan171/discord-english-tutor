@@ -1,0 +1,92 @@
+[
+  {
+    "word": "curriculum",
+    "part_of_speech": "noun",
+    "definition": "the subjects and content taught in a school or course",
+    "example": "Schools should include practical life skills in the curriculum."
+  },
+  {
+    "word": "literacy",
+    "part_of_speech": "noun",
+    "definition": "the ability to read and write",
+    "example": "Improving literacy rates is a top priority in many developing countries."
+  },
+  {
+    "word": "pedagogy",
+    "part_of_speech": "noun",
+    "definition": "the method and practice of teaching",
+    "example": "Modern pedagogy focuses more on critical thinking than memorization."
+  },
+  {
+    "word": "rote learning",
+    "part_of_speech": "noun phrase",
+    "definition": "learning by repeating information over and over rather than understanding it",
+    "example": "Critics argue that rote learning discourages students from thinking critically."
+  },
+  {
+    "word": "academic",
+    "part_of_speech": "adjective",
+    "definition": "relating to education, school, or scholarly study",
+    "example": "Her academic performance improved significantly after she changed schools."
+  },
+  {
+    "word": "vocational",
+    "part_of_speech": "adjective",
+    "definition": "relating to skills and training needed for a particular job",
+    "example": "Vocational training gives students practical skills for the workplace."
+  },
+  {
+    "word": "underprivileged",
+    "part_of_speech": "adjective",
+    "definition": "not having the same social or economic advantages as most people",
+    "example": "The charity provides free tutoring for underprivileged children."
+  },
+  {
+    "word": "scholarship",
+    "part_of_speech": "noun",
+    "definition": "money given to a student to help pay for their education, based on merit or need",
+    "example": "She was awarded a scholarship to study engineering abroad."
+  },
+  {
+    "word": "assessment",
+    "part_of_speech": "noun",
+    "definition": "the evaluation of a student's knowledge or performance, e.g. through tests",
+    "example": "Continuous assessment can give a more accurate picture of a student's ability than a single exam."
+  },
+  {
+    "word": "extracurricular",
+    "part_of_speech": "adjective",
+    "definition": "relating to activities outside the normal school curriculum",
+    "example": "Joining extracurricular activities like sports or debate clubs helps students develop soft skills."
+  },
+  {
+    "word": "cognitive",
+    "part_of_speech": "adjective",
+    "definition": "relating to mental processes such as thinking, understanding, and learning",
+    "example": "Reading from an early age supports children's cognitive development."
+  },
+  {
+    "word": "tuition",
+    "part_of_speech": "noun",
+    "definition": "the fees charged for teaching, especially at a college or university",
+    "example": "University tuition has risen sharply over the past decade."
+  },
+  {
+    "word": "disseminate",
+    "part_of_speech": "verb",
+    "definition": "to spread information widely",
+    "example": "The internet has made it easier to disseminate knowledge across the world."
+  },
+  {
+    "word": "proficiency",
+    "part_of_speech": "noun",
+    "definition": "a high level of skill or competence in something",
+    "example": "Employers increasingly expect a high level of English proficiency."
+  },
+  {
+    "word": "curriculum vitae",
+    "part_of_speech": "noun phrase",
+    "definition": "a written document listing a person's education and work experience, used when applying for a job",
+    "example": "Make sure your curriculum vitae highlights your most relevant skills."
+  }
+]

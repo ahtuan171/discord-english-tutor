@@ -1,8 +1,8 @@
-# English Daily Coach — Discord Bot
+# English Vocabulary Bot — Discord Bot
 
-Một bot Discord dẫn bạn qua vòng **Input → Understand → Recall → Use → Review** mỗi ngày:
-10 từ vựng, paraphrase practice, IELTS writing sample có annotation, active-recall quiz,
-spaced-repetition review, và weekly progress report.
+Một bot Discord dạy từ vựng IELTS/academic mỗi ngày: **word → definition → example**,
+kèm ôn tập theo spaced-repetition. **Không dùng LLM/AI** — toàn bộ nội dung lấy từ
+database, phản hồi tức thì, không tốn API/thời gian chờ AI.
 
 ## 1. Cài đặt
 
@@ -24,61 +24,91 @@ copy env.example .env
 - `DAILY_CHANNEL_ID` — ID kênh nơi bot tự động đăng bài học mỗi ngày (bật Developer Mode → chuột phải kênh → Copy Channel ID).
 - `GUILD_ID` — ID server của bạn, để slash command sync tức thì thay vì chờ ~1 giờ.
 - `DATABASE_URL` — connection string PostgreSQL, dạng `postgresql+asyncpg://user:pass@host:5432/dbname`.
-- `LLM_PROVIDER` — `gemini` (mặc định, free tier tốt) hoặc `ollama` (100% free, chạy local).
-  - Gemini: lấy `GEMINI_API_KEY` miễn phí tại https://aistudio.google.com/apikey
-  - Ollama: cài https://ollama.com, chạy `ollama pull llama3.1`, để `OLLAMA_HOST`/`OLLAMA_MODEL` trỏ đúng.
+  Nếu dùng Supabase: lấy connection string ở nút **Connect → Session/Transaction pooler**
+  (không dùng host `db.xxx.supabase.co` trực tiếp — host đó chỉ có IPv6, dễ không kết nối được).
 
 ## 3. Tạo bot & cấp quyền trên Discord Developer Portal
 
 1. https://discord.com/developers/applications → **New Application**.
 2. Tab **Bot** → **Reset Token** → copy vào `DISCORD_BOT_TOKEN`.
 3. Vẫn ở tab **Bot**, bật **Privileged Gateway Intents**:
-   - ✅ MESSAGE CONTENT INTENT (bắt buộc — bot đọc câu trả lời của bạn)
+   - ✅ MESSAGE CONTENT INTENT
    - ✅ SERVER MEMBERS INTENT
 4. Tab **OAuth2 → URL Generator**:
    - Scopes: ✅ `bot`, ✅ `applications.commands`
-   - Bot Permissions: Send Messages, Send Messages in Threads, Embed Links, Read Message History, Add Reactions, Use Slash Commands, Manage Messages (tuỳ chọn)
+   - Bot Permissions: Send Messages, Send Messages in Threads, Embed Links, Read Message History, Add Reactions, Use Slash Commands
    - Copy URL sinh ra ở cuối trang → mở → chọn server → Authorize.
 
 ## 4. Chạy bot
 
 ```bash
+python -m scripts.seed_dictionary   # chạy 1 lần: nạp dataset từ điển vào DB
 python -m bot.main
 ```
 
 Lần đầu chạy sẽ tự tạo bảng trong PostgreSQL. Slash command sẽ xuất hiện trong server ngay lập tức nếu bạn có set `GUILD_ID`.
 
-## 5. Lệnh có sẵn (MVP)
+## 5. Lệnh có sẵn
 
-| Command       | Mô tả                                                              |
-|---------------|---------------------------------------------------------------------|
-| `/daily`      | Lấy bài học hôm nay: 10 từ vựng + IELTS writing sample có annotation |
-| `/paraphrase` | Luyện paraphrase 1 câu, được chấm điểm + gợi ý Band 7+ alternative   |
-| `/writing`    | Xem đề + sample, có thể thử viết câu trả lời để được check lỗi      |
-| `/quiz`       | Active-recall challenge 5 câu hỏi từ bài học hôm nay                 |
-| `/review`     | Ôn lại các từ đang yếu/đang học (nút I know / Almost / Don't know)   |
-| `/quick`      | Streak Saver — ôn 3 từ yếu trong 2-3 phút khi bận                    |
-| `/progress`   | Weekly report: từ đã học, từ còn yếu, lỗi hay gặp, streak            |
+| Command     | Mô tả                                                             |
+|-------------|--------------------------------------------------------------------|
+| `/vocab`    | Lấy 10 từ vựng **mới** (word + definition + example) — gọi nhiều lần/ngày đều ra từ khác nhau, không lặp; tự động thêm vào danh sách ôn tập |
+| `/review`   | Ôn lại các từ đã học (kể cả vừa học qua `/vocab`, hoặc đang yếu) — nút I know / Almost / Don't know |
+| `/quick`    | Streak Saver — ôn 3 từ yếu trong 1 phút khi bận                     |
+| `/progress` / `/stats` | Weekly report: từ đã học, từ còn yếu, streak             |
 
 Bot tự động đăng "Daily Drop" vào `DAILY_CHANNEL_ID` mỗi ngày lúc `DAILY_HOUR:DAILY_MINUTE`
 (theo `TIMEZONE`), và sẽ không gửi trùng nếu bài học hôm đó đã tồn tại (kể cả khi bot restart nhiều lần).
 
-## 6. Nguồn từ vựng (data/vocabulary/)
+## 6. Nguồn từ vựng — 100% từ database
 
-Thay vì để LLM tự nghĩ từ mới mỗi ngày (dễ lặp từ, sai band, lệch chủ đề), bot đọc từ
-một **word bank** đã soạn sẵn trong `data/vocabulary/*.json`, mỗi file là 1 chủ đề
-(environment, education, technology, health, economy, society_and_culture,
-crime_and_law, work_and_career — 15 từ/chủ đề, 120 từ). Mỗi ngày bot lấy 10 từ tiếp theo
-trong bank chưa từng dạy, rồi mới gọi LLM để sinh **definition + example** cho đúng
-những từ đó (LLM không tự chọn từ). Khi bank cạn, bot mới để LLM tự sinh từ mới
-(fallback, giữ nguyên hành vi cũ).
+Có 2 lớp dữ liệu, không lớp nào gọi AI:
 
-Muốn mở rộng: thêm/sửa trực tiếp trong các file JSON đó, hoặc tạo file chủ đề mới —
-format:
+1. **Word bank** (`data/vocabulary/*.json`) — **875 từ**, mỗi từ có definition + example
+   **soạn thủ công** (không tra tự động), đúng nghĩa dùng trong IELTS writing/speaking band 7+:
+   - 8 topic theo chủ đề IELTS (120 từ, file `01_...` đến `08_...`): environment, education,
+     technology, health, economy, society_and_culture, crime_and_law, work_and_career.
+   - 10 file `09_awl_sublist_1.json` đến `18_awl_sublist_10.json` (561 từ) — **toàn bộ**
+     [Academic Word List](https://en.wikipedia.org/wiki/Academic_Word_List) của Coxhead
+     (570 nhóm từ học thuật xuất hiện tần suất cao trong văn bản academic, công khai miễn
+     phí cho giáo dục), xếp theo tần suất giảm dần (sublist 1 = tần suất cao nhất).
+   - 2 file `19_common_vocabulary_1.json`, `20_common_vocabulary_2.json` (194 từ) — chọn từ
+     [New General Service List](https://www.newgeneralservicelist.com) (CC BY-SA), lọc bỏ
+     từ chức năng/quá cơ bản (the, a, is,...) và từ đã trùng với AWL/topic, giữ lại từ nội
+     dung thông dụng hàng ngày (control, effect, decision, opportunity, evidence,...).
+
+   Tên file có tiền tố số (`01_`, `02_`, ...) để cố định đúng thứ tự học — không dựa vào
+   thứ tự alphabet (vì "awl..." sẽ đứng trước "environment..." nếu xếp theo chữ cái, phá vỡ
+   trình tự 8 chủ đề IELTS trước, AWL sau như thiết kế). Đây quyết định **từ nào được dạy,
+   theo thứ tự nào**. Ở nhịp 10 từ/lần `/vocab`, 875 từ đủ cho khoảng **88 lần** gọi lệnh
+   không lặp — **mục tiêu 2000 từ đang làm dần theo từng batch** (đã chọn soạn thủ công
+   thay vì tự động để giữ chất lượng, nên sẽ mở rộng tiếp qua nhiều lần trò chuyện sau).
+2. **Dictionary dataset** (bảng `dictionary_entries` trong Postgres, seed từ
+   [Wordset Dictionary](https://github.com/wordset/wordset-dictionary), CC-BY-SA 4.0) —
+   chỉ dùng làm **fallback** cho từ mới bạn tự thêm vào word bank sau này mà không ghi
+   definition/example thủ công. Với 875 từ hiện tại, bảng này không được dùng tới.
+
+**Khi word bank cạn hết:** `/vocab` sẽ báo đã học hết, không lặp lại nội dung
+cũ; bạn dùng `/review`/`/quick` để tiếp tục ôn các từ đã học theo spaced-repetition. Muốn
+học tiếp từ mới thì thêm file JSON mới vào `data/vocabulary/` (đặt số thứ tự ≥ 19).
+
+**Seed dictionary dataset (chạy 1 lần, hoặc sau khi đổi DB):**
+```bash
+python -m scripts.seed_dictionary
+```
+An toàn khi chạy lại nhiều lần (bỏ qua từ đã có). Script tải trực tiếp 27 file JSON từ
+GitHub của Wordset — cần internet, không cần API key.
+
+**Mở rộng word bank:** thêm/sửa trực tiếp trong các file JSON đó, hoặc tạo file chủ đề
+mới, format:
 ```json
 [{"word": "mitigate", "part_of_speech": "verb"}]
 ```
-Không cần điền definition/example, LLM sẽ tự sinh khi dùng đến.
+Không cần điền definition/example cho từ đơn — bot tự tra trong `dictionary_entries`.
+Chỉ cần điền thủ công nếu từ đó là cụm nhiều từ / collocation.
+
+> Ghi công: dữ liệu từ điển lấy từ [Wordset Dictionary](https://github.com/wordset/wordset-dictionary),
+> giấy phép CC-BY-SA 4.0, xây dựng trên Princeton WordNet 3.0.
 
 ## 7. Kiến trúc
 
@@ -88,29 +118,25 @@ bot/
   main.py             # entrypoint, load cogs, sync slash command, start scheduler
   scheduler.py         # APScheduler — daily job lúc 08:00
   db/
-    models.py          # SQLAlchemy models (User, Vocabulary, DailyLesson, ...)
+    models.py          # SQLAlchemy models (User, Vocabulary, DictionaryEntry, UserVocabulary, DailyLesson)
     session.py          # async engine/session
-  llm/
-    base.py             # LLMClient interface
-    gemini_client.py     # implement Gemini
-    ollama_client.py     # implement Ollama
-    factory.py           # chọn provider theo LLM_PROVIDER
-    prompts.py           # toàn bộ prompt templates
   services/
     word_bank.py          # đọc data/vocabulary/*.json
-    vocabulary_service.py
-    paraphrase_service.py
-    writing_service.py
-    quiz_service.py
-    progress_service.py  # streak, spaced-repetition, weekly report
-    lesson_service.py    # ghép các service trên thành 1 bài học/ngày
+    vocabulary_service.py  # chọn từ + tra dictionary_entries (không LLM)
+    progress_service.py    # streak, spaced-repetition, weekly report
+    lesson_service.py      # ghép thành 1 bài học/ngày
   cogs/
-    daily.py, practice.py, writing.py, quiz.py, review.py, progress.py
+    daily.py, review.py, quick.py, progress.py
+scripts/
+  init_db.py            # tạo bảng
+  seed_dictionary.py     # nạp dataset Wordset vào bảng dictionary_entries (chạy 1 lần)
+data/
+  vocabulary/*.json      # word bank theo chủ đề
 ```
 
-## 8. Roadmap (v2 / v3, theo đề xuất ban đầu)
+## 8. Roadmap
 
-- v2: cải thiện spaced-repetition (SM-2 đầy đủ thay vì interval cố định), Personal Mistake Bank
-  review riêng, thống kê theo ngày.
-- v3: phân tích toàn bộ writing attempts của một user để tự sinh bài học nhắm đúng điểm yếu
-  (personalized IELTS writing coach).
+- v2: cải thiện spaced-repetition (SM-2 đầy đủ), thêm chủ đề mới vào word bank.
+- Tích hợp AI (paraphrase feedback, writing sample, chấm active-recall) đã được gỡ khỏi
+  bot này theo yêu cầu — nếu muốn thêm lại sau, phần đó có thể làm một dịch vụ/bot riêng
+  tách biệt khỏi phần từ vựng thuần database này.

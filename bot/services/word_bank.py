@@ -1,17 +1,21 @@
 """Loads the curated vocabulary word bank from data/vocabulary/*.json.
 
-Each file is one topic (environment.json, education.json, ...) containing
-a JSON array of {"word": ..., "part_of_speech": ...}. The bot picks words
-from here first so the curriculum stays exam-relevant and predictable;
-the LLM is only used to generate definitions/examples for them. If the
-whole bank has been taught already, the vocabulary service falls back to
-asking the LLM to invent new words.
+Files are named "NN_topic.json" (01_environment.json, 02_education.json, ...) —
+the numeric prefix controls teaching order (plain alphabetical sort would put
+e.g. "awl_sublist_1.json" before "environment.json", breaking topic order).
+Each file is a JSON array of {"word": ..., "part_of_speech": ...} plus a
+manual {"definition": ..., "example": ...} written for every word so the
+bot never depends on an LLM or a dictionary lookup that might return an
+obscure or wrong sense of a common word.
 """
 
 import json
+import re
 from functools import lru_cache
 
 from bot import config
+
+_PREFIX_RE = re.compile(r"^\d+_")
 
 
 @lru_cache
@@ -21,7 +25,7 @@ def load_word_bank() -> list[dict]:
         return entries
 
     for file_path in sorted(config.VOCAB_DATA_DIR.glob("*.json")):
-        topic = file_path.stem
+        topic = _PREFIX_RE.sub("", file_path.stem)
         with open(file_path, encoding="utf-8") as f:
             words = json.load(f)
         for item in words:
@@ -30,6 +34,8 @@ def load_word_bank() -> list[dict]:
                     "word": item["word"].strip().lower(),
                     "part_of_speech": item.get("part_of_speech", ""),
                     "topic": topic,
+                    "definition": item.get("definition", ""),
+                    "example": item.get("example", ""),
                 }
             )
     return entries
