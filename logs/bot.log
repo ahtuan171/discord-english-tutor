@@ -1,0 +1,7 @@
+2026-08-20 08:35:21,211 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2026-08-20 08:35:21,211 [WARNING] discord.client: davey is not installed, voice will NOT be supported
+2026-08-20 08:35:22,898 [INFO] discord.client: logging in using static token
+2026-08-20 08:35:43,220 [WARNING] discord.client: PyNaCl is not installed, voice will NOT be supported
+2026-08-20 08:35:43,220 [WARNING] discord.client: davey is not installed, voice will NOT be supported
+2026-08-20 08:35:44,372 [INFO] discord.client: logging in using static token
+2026-08-20 08:35:46,072 [INFO] discord.gateway: Shard ID None has connected to Gateway (Session ID: 1bd0ea944c6097fedeb44ab5f6b10341).

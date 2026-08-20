@@ -48,6 +48,16 @@ python -m bot.main
 
 Lần đầu chạy sẽ tự tạo bảng trong PostgreSQL. Slash command sẽ xuất hiện trong server ngay lập tức nếu bạn có set `GUILD_ID`.
 
+### 4.1 Auto-start cùng Windows (Chạy ngầm liên tục)
+
+Để bot **tự động khởi động ngay khi bật máy** và **chạy ngầm liên tục trong suốt quá trình mở máy** (không hiện cửa sổ cmd):
+
+1. **Cài đặt autostart:** Double-click file `scripts/install_startup.bat` (hoặc chạy trong terminal).
+   - Script sẽ tạo shortcut đăng ký bot khởi động cùng Windows.
+2. **Chạy ngầm thử ngay lập tức:** Double-click file `scripts/run_hidden.vbs`.
+3. **Kiểm tra log hoạt động:** Xem file `logs/bot.log` để kiểm tra trạng thái kết nối của bot.
+4. **Hủy autostart (nếu không muốn tự chạy nữa):** Double-click file `scripts/uninstall_startup.bat`.
+
 ## 5. Lệnh có sẵn
 
 | Command     | Mô tả                                                             |

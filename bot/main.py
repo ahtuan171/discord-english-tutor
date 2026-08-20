@@ -1,6 +1,8 @@
 import asyncio
 import logging
 
+from pathlib import Path
+
 import discord
 from discord.ext import commands
 
@@ -8,7 +10,19 @@ from bot import config
 from bot.db.session import init_models
 from bot.scheduler import setup_scheduler
 
-logging.basicConfig(level=logging.INFO)
+# Ensure logs directory exists
+logs_dir = Path(__file__).resolve().parent.parent / "logs"
+logs_dir.mkdir(parents=True, exist_ok=True)
+log_file = logs_dir / "bot.log"
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[
+        logging.StreamHandler(),
+        logging.FileHandler(log_file, encoding="utf-8"),
+    ],
+)
 log = logging.getLogger("english-tutor-bot")
 
 COGS = [
